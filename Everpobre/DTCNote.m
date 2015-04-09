@@ -1,4 +1,5 @@
 #import "DTCNote.h"
+#import "DTCPhoto.h"
 
 @interface DTCNote ()
 
@@ -8,6 +9,18 @@
 
 @implementation DTCNote
 
-// Custom logic goes here.
++(instancetype) noteWithName:(NSString *)name
+                    notebook:(DTCNotebook *)notebook
+                     context:(NSManagedObjectContext *)context{
+    
+    DTCNote *note = [self insertInManagedObjectContext:context];
+    note.name = name;
+    note.notebook = notebook;
+    note.creationDate = [NSDate date];
+    note.modificationDate = [NSDate date];
+    note.photo = [DTCPhoto insertInManagedObjectContext:context];
+    
+    return note;
+}
 
 @end
