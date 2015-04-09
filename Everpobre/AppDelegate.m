@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AGTCoreDataStack.h"
 #import "DTCNotebook.h"
+#import "DTCNote.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) AGTCoreDataStack *stack;
@@ -56,7 +57,19 @@
 
 #pragma mark - Utils
 - (void) createDummyData{
-    DTCNotebook *exs = [DTCNotebook notebookWithName:@"Para el recuerdo" context:self.stack.context];
+    DTCNotebook *exs = [DTCNotebook notebookWithName:@"Ex-novias p ara el recuerdo"
+                                             context:self.stack.context];
+    
+    
+    
+    DTCNote *note = [DTCNote noteWithName:@"Mariana Dávalos"
+                                 notebook:exs
+                                  context:self.stack.context];
+    
+    NSLog(@"Libreta: %@",exs);
+    NSLog(@"Nota: %@",note);
+    
+    note.text = @"Hermana gemela de Camila";
 }
 
 @end

@@ -2,6 +2,7 @@
 // Make changes to DTCNotebook.h instead.
 
 @import CoreData;
+#import "DTCEverpobreBaseClass.h"
 
 extern const struct DTCNotebookAttributes {
 	__unsafe_unretained NSString *creationDate;
@@ -18,7 +19,7 @@ extern const struct DTCNotebookRelationships {
 @interface DTCNotebookID : NSManagedObjectID {}
 @end
 
-@interface _DTCNotebook : NSManagedObject {}
+@interface _DTCNotebook : DTCEverpobreBaseClass {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;

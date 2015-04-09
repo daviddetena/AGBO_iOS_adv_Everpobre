@@ -2,6 +2,7 @@
 // Make changes to DTCPhoto.h instead.
 
 @import CoreData;
+#import "DTCEverpobreBaseClass.h"
 
 extern const struct DTCPhotoAttributes {
 	__unsafe_unretained NSString *photoData;
@@ -16,7 +17,7 @@ extern const struct DTCPhotoRelationships {
 @interface DTCPhotoID : NSManagedObjectID {}
 @end
 
-@interface _DTCPhoto : NSManagedObject {}
+@interface _DTCPhoto : DTCEverpobreBaseClass {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
