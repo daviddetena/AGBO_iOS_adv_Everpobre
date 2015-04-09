@@ -10,6 +10,7 @@
 #import "AGTCoreDataStack.h"
 #import "DTCNotebook.h"
 #import "DTCNote.h"
+#import "DTCNotebooksViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) AGTCoreDataStack *stack;
@@ -19,14 +20,39 @@
 
 #pragma mark - App Lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Cremos una instancia del stack
     self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Model"];
     
     // Creamos datos chorras
     [self createDummyData];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Creamos el Fetch Request => Búsqueda de todas las libretas
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DTCNotebook entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:DTCNotebookAttributes.name
+                                                          ascending:YES
+                                                           selector:@selector(caseInsensitiveCompare:)],
+                            [NSSortDescriptor sortDescriptorWithKey:DTCNotebookAttributes.modificationDate ascending:NO]];
+    req.fetchBatchSize = 20;
+    
+    // Creamos el FetchedResultsController
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]
+                                      initWithFetchRequest:req
+                                      managedObjectContext:self.stack.context
+                                      sectionNameKeyPath:nil
+                                      cacheName:nil];
+    
+    // Creamos el controlador y lo metemos en un navigation controller
+    DTCNotebooksViewController *nVC = [[DTCNotebooksViewController alloc]
+                                       initWithFetchedResultsController:fc
+                                       style:UITableViewStylePlain];
+    
+    UINavigationController *nav = [[UINavigationController alloc]
+                                   initWithRootViewController:nVC];
+    
+    // Y lo mostramos en pantalla
+    self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -63,7 +89,7 @@
     
     
     // Creamos nuevos objetos
-    DTCNotebook *exs = [DTCNotebook notebookWithName:@"Ex-novias p ara el recuerdo"
+    DTCNotebook *exs = [DTCNotebook notebookWithName:@"Ex-novias para el recuerdo"
                                              context:self.stack.context];
     
     [DTCNote noteWithName:@"Mariana Dávalos"

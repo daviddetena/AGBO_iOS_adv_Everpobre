@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		594581EF1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */; };
+		594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */; };
+		594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */; };
 		5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */; };
 		59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495921AD6C99C007C62A5 /* _DTCNote.m */; };
 		59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495941AD6C99C007C62A5 /* _DTCNotebook.m */; };
@@ -36,6 +38,10 @@
 /* Begin PBXFileReference section */
 		594581ED1AD6EEA300DBC667 /* DTCEverpobreBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCEverpobreBaseClass.h; sourceTree = "<group>"; };
 		594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCEverpobreBaseClass.m; sourceTree = "<group>"; };
+		594581F11AD724AB00DBC667 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		594581F41AD7260000DBC667 /* DTCNotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNotebooksViewController.h; sourceTree = "<group>"; };
+		594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotebooksViewController.m; sourceTree = "<group>"; };
 		5984E5CF1AD6B88700C6BF5A /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
 		5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		59D495911AD6C99C007C62A5 /* _DTCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNote.h; sourceTree = "<group>"; };
@@ -81,6 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594581F01AD7247800DBC667 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				594581F11AD724AB00DBC667 /* AGTCoreDataTableViewController.h */,
+				594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */,
+				594581F41AD7260000DBC667 /* DTCNotebooksViewController.h */,
+				594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		59D495A31AD6C9AB007C62A5 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +132,7 @@
 		59FAC8281AD69ACE00982271 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				594581F01AD7247800DBC667 /* Controllers */,
 				59FAC84C1AD69BD700982271 /* Models */,
 				59FAC82D1AD69ACE00982271 /* AppDelegate.h */,
 				59FAC82E1AD69ACE00982271 /* AppDelegate.m */,
@@ -271,6 +289,7 @@
 			files = (
 				594581EF1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m in Sources */,
 				59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */,
+				594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */,
 				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
 				59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */,
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
@@ -279,6 +298,7 @@
 				59D495A01AD6C99C007C62A5 /* DTCNote.m in Sources */,
 				59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */,
 				5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */,
+				594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */,
 				59FAC84B1AD69B0D00982271 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
