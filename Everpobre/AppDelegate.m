@@ -57,19 +57,62 @@
 
 #pragma mark - Utils
 - (void) createDummyData{
+    
+    // Elimino datos anteriores
+    [self.stack zapAllData];
+    
+    
+    // Creamos nuevos objetos
     DTCNotebook *exs = [DTCNotebook notebookWithName:@"Ex-novias p ara el recuerdo"
                                              context:self.stack.context];
     
+    [DTCNote noteWithName:@"Mariana Dávalos"
+                 notebook:exs
+                  context:self.stack.context];
     
+    [DTCNote noteWithName:@"Camila Dávalos"
+                 notebook:exs
+                  context:self.stack.context];
     
-    DTCNote *note = [DTCNote noteWithName:@"Mariana Dávalos"
+    [DTCNote noteWithName:@"Pampita"
+                 notebook:exs
+                  context:self.stack.context];
+    
+    DTCNote *vega = [DTCNote noteWithName:@"María Teresa de la Vega"
                                  notebook:exs
                                   context:self.stack.context];
     
-    NSLog(@"Libreta: %@",exs);
-    NSLog(@"Nota: %@",note);
+    NSLog(@"Una nota: %@",vega);
     
-    note.text = @"Hermana gemela de Camila";
+    // Buscar, ordenando por los criterios de nombre alfabético y de fecha de modificación más reciente
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DTCNote entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:DTCNoteAttributes.name
+                                                          ascending:YES
+                                                           selector:@selector(caseInsensitiveCompare:)],
+                            [NSSortDescriptor sortDescriptorWithKey:DTCNoteAttributes.modificationDate ascending:NO]];
+    // Número de resultados que devolverá en cada lote
+    req.fetchBatchSize = 20;
+    //Queremos todas las notas de la libreta exs
+    req.predicate = [NSPredicate predicateWithFormat:@"notebook = %@",exs];
+    
+    // Ejecutamos la búsqueda guardando los resultados en un array (el método es de AGTCoreDataStack
+    NSArray *results = [self.stack
+                        executeFetchRequest:req
+                        errorBlock:^(NSError *error) {
+                            NSLog(@"Error al buscar! %@",error);
+                        }];
+    NSLog(@"Notas: %@",results);
+    
+    
+    // Borrar (queda marcado como listo para ser destruido, ya no aparece en búsquedas)
+    // Cuando se guarde (se haga commit) se aplicarán las validaciones y se llevarán a
+    // cabo las operaciones pendientes (como por ejemplo, borrados)
+    [self.stack.context deleteObject:vega];
+    
+    // Guardamos
+    [self.stack saveWithErrorBlock:^(NSError *error) {
+        NSLog(@"Error al guardar! %@",error);
+    }];
 }
 
 @end
