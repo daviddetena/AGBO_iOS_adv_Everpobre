@@ -12,6 +12,7 @@
 		59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8301AD69ACE00982271 /* Images.xcassets */; };
 		59FAC8341AD69ACE00982271 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8321AD69ACE00982271 /* LaunchScreen.xib */; };
 		59FAC8401AD69ACE00982271 /* EverpobreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC83F1AD69ACE00982271 /* EverpobreTests.m */; };
+		59FAC84B1AD69B0D00982271 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC8491AD69B0D00982271 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		59FAC8391AD69ACE00982271 /* EverpobreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverpobreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FAC83E1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAC83F1AD69ACE00982271 /* EverpobreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreTests.m; sourceTree = "<group>"; };
+		59FAC84A1AD69B0D00982271 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		59FAC8281AD69ACE00982271 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				59FAC84C1AD69BD700982271 /* Models */,
 				59FAC82D1AD69ACE00982271 /* AppDelegate.h */,
 				59FAC82E1AD69ACE00982271 /* AppDelegate.m */,
 				59FAC8301AD69ACE00982271 /* Images.xcassets */,
@@ -109,6 +112,14 @@
 				59FAC83E1AD69ACE00982271 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59FAC84C1AD69BD700982271 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC8491AD69B0D00982271 /* Model.xcdatamodeld */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			files = (
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
 				59FAC82C1AD69ACE00982271 /* main.m in Sources */,
+				59FAC84B1AD69B0D00982271 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +420,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59FAC8491AD69B0D00982271 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59FAC84A1AD69B0D00982271 /* Model.xcdatamodel */,
+			);
+			currentVersion = 59FAC84A1AD69B0D00982271 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59FAC81E1AD69ACE00982271 /* Project object */;
 }
