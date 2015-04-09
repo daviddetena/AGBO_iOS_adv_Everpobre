@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */; };
+		59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495921AD6C99C007C62A5 /* _DTCNote.m */; };
+		59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495941AD6C99C007C62A5 /* _DTCNotebook.m */; };
+		59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495961AD6C99C007C62A5 /* _DTCPhoto.m */; };
+		59D495A01AD6C99C007C62A5 /* DTCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495981AD6C99C007C62A5 /* DTCNote.m */; };
+		59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4959A1AD6C99C007C62A5 /* DTCNotebook.m */; };
+		59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4959C1AD6C99C007C62A5 /* DTCPhoto.m */; };
 		59FAC82C1AD69ACE00982271 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82B1AD69ACE00982271 /* main.m */; };
 		59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82E1AD69ACE00982271 /* AppDelegate.m */; };
 		59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8301AD69ACE00982271 /* Images.xcassets */; };
@@ -26,6 +33,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5984E5CF1AD6B88700C6BF5A /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
+		5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
+		59D495911AD6C99C007C62A5 /* _DTCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNote.h; sourceTree = "<group>"; };
+		59D495921AD6C99C007C62A5 /* _DTCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCNote.m; sourceTree = "<group>"; };
+		59D495931AD6C99C007C62A5 /* _DTCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNotebook.h; sourceTree = "<group>"; };
+		59D495941AD6C99C007C62A5 /* _DTCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCNotebook.m; sourceTree = "<group>"; };
+		59D495951AD6C99C007C62A5 /* _DTCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCPhoto.h; sourceTree = "<group>"; };
+		59D495961AD6C99C007C62A5 /* _DTCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCPhoto.m; sourceTree = "<group>"; };
+		59D495971AD6C99C007C62A5 /* DTCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNote.h; sourceTree = "<group>"; };
+		59D495981AD6C99C007C62A5 /* DTCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNote.m; sourceTree = "<group>"; };
+		59D495991AD6C99C007C62A5 /* DTCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNotebook.h; sourceTree = "<group>"; };
+		59D4959A1AD6C99C007C62A5 /* DTCNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotebook.m; sourceTree = "<group>"; };
+		59D4959B1AD6C99C007C62A5 /* DTCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCPhoto.h; sourceTree = "<group>"; };
+		59D4959C1AD6C99C007C62A5 /* DTCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCPhoto.m; sourceTree = "<group>"; };
 		59FAC8261AD69ACE00982271 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FAC82A1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAC82B1AD69ACE00982271 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59D495A31AD6C9AB007C62A5 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				59D495911AD6C99C007C62A5 /* _DTCNote.h */,
+				59D495921AD6C99C007C62A5 /* _DTCNote.m */,
+				59D495931AD6C99C007C62A5 /* _DTCNotebook.h */,
+				59D495941AD6C99C007C62A5 /* _DTCNotebook.m */,
+				59D495951AD6C99C007C62A5 /* _DTCPhoto.h */,
+				59D495961AD6C99C007C62A5 /* _DTCPhoto.m */,
+			);
+			name = Machine;
+			sourceTree = "<group>";
+		};
 		59FAC81D1AD69ACE00982271 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +151,15 @@
 		59FAC84C1AD69BD700982271 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				59D495A31AD6C9AB007C62A5 /* Machine */,
+				59D495971AD6C99C007C62A5 /* DTCNote.h */,
+				59D495981AD6C99C007C62A5 /* DTCNote.m */,
+				59D495991AD6C99C007C62A5 /* DTCNotebook.h */,
+				59D4959A1AD6C99C007C62A5 /* DTCNotebook.m */,
+				59D4959B1AD6C99C007C62A5 /* DTCPhoto.h */,
+				59D4959C1AD6C99C007C62A5 /* DTCPhoto.m */,
+				5984E5CF1AD6B88700C6BF5A /* AGTCoreDataStack.h */,
+				5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */,
 				59FAC8491AD69B0D00982271 /* Model.xcdatamodeld */,
 			);
 			name = Models;
@@ -221,8 +264,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */,
+				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
+				59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */,
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
+				59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */,
 				59FAC82C1AD69ACE00982271 /* main.m in Sources */,
+				59D495A01AD6C99C007C62A5 /* DTCNote.m in Sources */,
+				59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */,
+				5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */,
 				59FAC84B1AD69B0D00982271 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +460,7 @@
 				59FAC8451AD69ACE00982271 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59FAC8461AD69ACE00982271 /* Build configuration list for PBXNativeTarget "EverpobreTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +469,7 @@
 				59FAC8481AD69ACE00982271 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
