@@ -7,17 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "AGTCoreDataStack.h"
+#import "DTCNotebook.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic,strong) AGTCoreDataStack *stack;
 @end
 
 @implementation AppDelegate
 
-
+#pragma mark - App Lifecycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    // Cremos una instancia del stack
+    self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Model"];
+    
+    // Creamos datos chorras
+    [self createDummyData];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -43,6 +51,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - Utils
+- (void) createDummyData{
+    DTCNotebook *exs = [DTCNotebook notebookWithName:@"Para el recuerdo" context:self.stack.context];
 }
 
 @end

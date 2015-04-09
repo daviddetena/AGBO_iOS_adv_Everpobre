@@ -8,6 +8,16 @@
 
 @implementation DTCNotebook
 
-// Custom logic goes here.
++(instancetype) notebookWithName:(NSString *) name
+                         context: (NSManagedObjectContext *) context{
+    
+    DTCNotebook *notebook = [self insertInManagedObjectContext:context];
+    notebook.name = name;
+    notebook.creationDate = [NSDate date];
+    notebook.modificationDate = [NSDate date];
+    
+    return notebook;
+}
+
 
 @end
