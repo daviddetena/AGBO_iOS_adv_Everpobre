@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59FAC82C1AD69ACE00982271 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82B1AD69ACE00982271 /* main.m */; };
+		59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82E1AD69ACE00982271 /* AppDelegate.m */; };
+		59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8301AD69ACE00982271 /* Images.xcassets */; };
+		59FAC8341AD69ACE00982271 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8321AD69ACE00982271 /* LaunchScreen.xib */; };
+		59FAC8401AD69ACE00982271 /* EverpobreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC83F1AD69ACE00982271 /* EverpobreTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59FAC83A1AD69ACE00982271 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59FAC81E1AD69ACE00982271 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59FAC8251AD69ACE00982271;
+			remoteInfo = Everpobre;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59FAC8261AD69ACE00982271 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59FAC82A1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59FAC82B1AD69ACE00982271 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59FAC82D1AD69ACE00982271 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		59FAC82E1AD69ACE00982271 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59FAC8301AD69ACE00982271 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		59FAC8331AD69ACE00982271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		59FAC8391AD69ACE00982271 /* EverpobreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverpobreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59FAC83E1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59FAC83F1AD69ACE00982271 /* EverpobreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59FAC8231AD69ACE00982271 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FAC8361AD69ACE00982271 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59FAC81D1AD69ACE00982271 = {
+			isa = PBXGroup;
+			children = (
+				59FAC8281AD69ACE00982271 /* Everpobre */,
+				59FAC83C1AD69ACE00982271 /* EverpobreTests */,
+				59FAC8271AD69ACE00982271 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59FAC8271AD69ACE00982271 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC8261AD69ACE00982271 /* Everpobre.app */,
+				59FAC8391AD69ACE00982271 /* EverpobreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59FAC8281AD69ACE00982271 /* Everpobre */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC82D1AD69ACE00982271 /* AppDelegate.h */,
+				59FAC82E1AD69ACE00982271 /* AppDelegate.m */,
+				59FAC8301AD69ACE00982271 /* Images.xcassets */,
+				59FAC8321AD69ACE00982271 /* LaunchScreen.xib */,
+				59FAC8291AD69ACE00982271 /* Supporting Files */,
+			);
+			path = Everpobre;
+			sourceTree = "<group>";
+		};
+		59FAC8291AD69ACE00982271 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC82A1AD69ACE00982271 /* Info.plist */,
+				59FAC82B1AD69ACE00982271 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59FAC83C1AD69ACE00982271 /* EverpobreTests */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC83F1AD69ACE00982271 /* EverpobreTests.m */,
+				59FAC83D1AD69ACE00982271 /* Supporting Files */,
+			);
+			path = EverpobreTests;
+			sourceTree = "<group>";
+		};
+		59FAC83D1AD69ACE00982271 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC83E1AD69ACE00982271 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59FAC8251AD69ACE00982271 /* Everpobre */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59FAC8431AD69ACE00982271 /* Build configuration list for PBXNativeTarget "Everpobre" */;
+			buildPhases = (
+				59FAC8221AD69ACE00982271 /* Sources */,
+				59FAC8231AD69ACE00982271 /* Frameworks */,
+				59FAC8241AD69ACE00982271 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Everpobre;
+			productName = Everpobre;
+			productReference = 59FAC8261AD69ACE00982271 /* Everpobre.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59FAC8381AD69ACE00982271 /* EverpobreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59FAC8461AD69ACE00982271 /* Build configuration list for PBXNativeTarget "EverpobreTests" */;
+			buildPhases = (
+				59FAC8351AD69ACE00982271 /* Sources */,
+				59FAC8361AD69ACE00982271 /* Frameworks */,
+				59FAC8371AD69ACE00982271 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59FAC83B1AD69ACE00982271 /* PBXTargetDependency */,
+			);
+			name = EverpobreTests;
+			productName = EverpobreTests;
+			productReference = 59FAC8391AD69ACE00982271 /* EverpobreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59FAC81E1AD69ACE00982271 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "David de Tena";
+				TargetAttributes = {
+					59FAC8251AD69ACE00982271 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					59FAC8381AD69ACE00982271 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 59FAC8251AD69ACE00982271;
+					};
+				};
+			};
+			buildConfigurationList = 59FAC8211AD69ACE00982271 /* Build configuration list for PBXProject "Everpobre" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59FAC81D1AD69ACE00982271;
+			productRefGroup = 59FAC8271AD69ACE00982271 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59FAC8251AD69ACE00982271 /* Everpobre */,
+				59FAC8381AD69ACE00982271 /* EverpobreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59FAC8241AD69ACE00982271 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FAC8341AD69ACE00982271 /* LaunchScreen.xib in Resources */,
+				59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FAC8371AD69ACE00982271 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59FAC8221AD69ACE00982271 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
+				59FAC82C1AD69ACE00982271 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FAC8351AD69ACE00982271 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FAC8401AD69ACE00982271 /* EverpobreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59FAC83B1AD69ACE00982271 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59FAC8251AD69ACE00982271 /* Everpobre */;
+			targetProxy = 59FAC83A1AD69ACE00982271 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59FAC8321AD69ACE00982271 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59FAC8331AD69ACE00982271 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59FAC8411AD69ACE00982271 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		59FAC8421AD69ACE00982271 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59FAC8441AD69ACE00982271 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Everpobre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		59FAC8451AD69ACE00982271 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Everpobre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		59FAC8471AD69ACE00982271 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EverpobreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Everpobre.app/Everpobre";
+			};
+			name = Debug;
+		};
+		59FAC8481AD69ACE00982271 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EverpobreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Everpobre.app/Everpobre";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59FAC8211AD69ACE00982271 /* Build configuration list for PBXProject "Everpobre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59FAC8411AD69ACE00982271 /* Debug */,
+				59FAC8421AD69ACE00982271 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59FAC8431AD69ACE00982271 /* Build configuration list for PBXNativeTarget "Everpobre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59FAC8441AD69ACE00982271 /* Debug */,
+				59FAC8451AD69ACE00982271 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59FAC8461AD69ACE00982271 /* Build configuration list for PBXNativeTarget "EverpobreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59FAC8471AD69ACE00982271 /* Debug */,
+				59FAC8481AD69ACE00982271 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59FAC81E1AD69ACE00982271 /* Project object */;
+}
