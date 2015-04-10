@@ -36,10 +36,13 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     //self.title = _notebook.name;
+    
+    // Add button
+    [self addNewNoteButton];
 }
 
 
-#pragma mark - Data Source
+#pragma mark - Table Data Source
 // Método que genera la celda
 -(UITableViewCell *) tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,6 +65,47 @@
     
     // Devolverla
     return cell;
+}
+
+// Permitimos que se puedan eliminar notas de la libreta
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Obtenemos la nota de la celda
+        DTCNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        // La eliminiamos
+        [self.fetchedResultsController.managedObjectContext deleteObject:note];
+    }
+}
+
+
+#pragma mark - Table Delegate
+
+
+
+#pragma mark - Utils
+
+// Añadimos botón de nueva nota
+-(void) addNewNoteButton{
+    // Botón añadir del sistema en la derecha de la barra de navegación
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                  target:self
+                                  action:@selector(addNewNote:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+
+#pragma mark - Actions
+
+// Añadimos nueva libreta en una nueva celda de la tabla
+-(void) addNewNote:(id) sender{
+    
+    // Al crear una nueva nota en el modelo, CoreData manda una notificación de cambio
+    // por KVO a FetchedResultsController, que avisa a la tabla y le dice que se refresque
+    [DTCNote noteWithName:@"Nueva nota"
+                 notebook:self.notebook
+                  context:self.notebook.managedObjectContext];
 }
 
 @end

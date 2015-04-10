@@ -119,7 +119,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 #pragma mark - Utils
 
-// Añadimos botón de nueva nota
+// Añadimos botón de nueva libreta
 -(void) addNewNotebookButton{
     // Botón añadir del sistema en la derecha de la barra de navegación
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
