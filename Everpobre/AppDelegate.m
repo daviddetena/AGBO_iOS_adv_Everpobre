@@ -12,6 +12,7 @@
 #import "DTCNote.h"
 #import "DTCNotebooksViewController.h"
 #import "UIViewController+Navigation.h"
+#import "Settings.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) AGTCoreDataStack *stack;
@@ -53,6 +54,10 @@
     self.window.rootViewController = [nVC wrappedInNavigation];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    // Arranco el autosave
+    [self autoSave];
+    
     return YES;
 }
 
@@ -147,6 +152,25 @@
     [self.stack saveWithErrorBlock:^(NSError *error) {
         NSLog(@"Error al guardar! %@",error);
     }];
+}
+
+// La primera vez que se ejecute autoSave arranca el ciclo.
+// Esto se ejecutará en la cola principal y siempre antes de ejecutarse código tuyo,
+// debido al método performSelector... Justo antes de empezar un nuevo run loop, lo
+// cual garantiza que no interfiera con código tuyo
+-(void) autoSave{
+    
+    if (AUTO_SAVE) {
+        NSLog(@"Autoguardando...");
+        [self.stack saveWithErrorBlock:^(NSError *error) {
+            NSLog(@"Error al autoguardar!");
+        }];
+        
+        // Pongo en mi "agenda" una nueva llamada a autoSave
+        [self performSelector:@selector(autoSave)
+                   withObject:nil
+                   afterDelay:AUTO_SAVE_DELAY];
+    }
 }
 
 @end

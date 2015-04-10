@@ -62,6 +62,7 @@
 		59D4959C1AD6C99C007C62A5 /* DTCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCPhoto.m; sourceTree = "<group>"; };
 		59DA9EC41AD82496002A9B90 /* DTCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNotesViewController.h; sourceTree = "<group>"; };
 		59DA9EC51AD82496002A9B90 /* DTCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotesViewController.m; sourceTree = "<group>"; };
+		59DA9EC81AD83E8B002A9B90 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		59FAC8261AD69ACE00982271 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FAC82A1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAC82B1AD69ACE00982271 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 				59FAC8301AD69ACE00982271 /* Images.xcassets */,
 				59FAC8321AD69ACE00982271 /* LaunchScreen.xib */,
 				59FAC8291AD69ACE00982271 /* Supporting Files */,
+				59DA9EC81AD83E8B002A9B90 /* Settings.h */,
 			);
 			path = Everpobre;
 			sourceTree = "<group>";
