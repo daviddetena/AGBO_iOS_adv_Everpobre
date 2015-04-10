@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590350DE1AD7B0E80069C82C /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 590350DD1AD7B0E80069C82C /* UIViewController+Navigation.m */; };
 		594581EF1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */; };
 		594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */; };
 		594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590350DC1AD7B0E80069C82C /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		590350DD1AD7B0E80069C82C /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		594581ED1AD6EEA300DBC667 /* DTCEverpobreBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCEverpobreBaseClass.h; sourceTree = "<group>"; };
 		594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCEverpobreBaseClass.m; sourceTree = "<group>"; };
 		594581F11AD724AB00DBC667 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590350DB1AD7B0590069C82C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				590350DC1AD7B0E80069C82C /* UIViewController+Navigation.h */,
+				590350DD1AD7B0E80069C82C /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		594581F01AD7247800DBC667 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 		59FAC8281AD69ACE00982271 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				590350DB1AD7B0590069C82C /* Categories */,
 				594581F01AD7247800DBC667 /* Controllers */,
 				59FAC84C1AD69BD700982271 /* Models */,
 				59FAC82D1AD69ACE00982271 /* AppDelegate.h */,
@@ -291,6 +304,7 @@
 				59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */,
 				594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */,
 				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
+				590350DE1AD7B0E80069C82C /* UIViewController+Navigation.m in Sources */,
 				59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */,
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
 				59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */,

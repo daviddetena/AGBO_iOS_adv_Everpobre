@@ -11,6 +11,7 @@
 #import "DTCNotebook.h"
 #import "DTCNote.h"
 #import "DTCNotebooksViewController.h"
+#import "UIViewController+Navigation.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) AGTCoreDataStack *stack;
@@ -43,16 +44,13 @@
                                       sectionNameKeyPath:nil
                                       cacheName:nil];
     
-    // Creamos el controlador y lo metemos en un navigation controller
+    // Creamos el controlador
     DTCNotebooksViewController *nVC = [[DTCNotebooksViewController alloc]
                                        initWithFetchedResultsController:fc
                                        style:UITableViewStylePlain];
     
-    UINavigationController *nav = [[UINavigationController alloc]
-                                   initWithRootViewController:nVC];
-    
-    // Y lo mostramos en pantalla
-    self.window.rootViewController = nav;
+    // Lo incluimos en un navigation controller usando el método que he añadido en la categoría
+    self.window.rootViewController = [nVC wrappedInNavigation];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
