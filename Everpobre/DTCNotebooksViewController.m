@@ -8,6 +8,8 @@
 
 #import "DTCNotebooksViewController.h"
 #import "DTCNotebook.h"
+#import "DTCNote.h"
+#import "DTCNotesViewController.h"
 
 @interface DTCNotebooksViewController ()
 
@@ -82,6 +84,35 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 -(void) tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    // Obtenemos libreta seleccionada
+    DTCNotebook *notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Necesitamos FetchRequest con predicado (que indique que queremos todas las notas de la libreta actual)
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DTCNote entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:DTCNoteAttributes.name
+                                                          ascending:YES
+                                                           selector:@selector(caseInsensitiveCompare:)],
+                            [NSSortDescriptor sortDescriptorWithKey:DTCNoteAttributes.modificationDate ascending:NO]];
+    // Número de resultados que devolverá en cada lote
+    req.fetchBatchSize = 20;
+    //Queremos todas las notas de la libreta note
+    req.predicate = [NSPredicate predicateWithFormat:@"notebook = %@",notebook];
+    
+    // Añadimos el FetchRequest al controlador NSFetchedResults
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]
+                                      initWithFetchRequest:req
+                                      managedObjectContext:notebook.managedObjectContext
+                                      sectionNameKeyPath:nil
+                                      cacheName:nil];
+    
+    // Crear controlador de notas
+    DTCNotesViewController *notesVC = [[DTCNotesViewController alloc]
+                                       initWithFetchedResultsController:fc
+                                       style:UITableViewStylePlain
+                                       notebook:notebook];
+    
+    // Hacer un push
+    [self.navigationController pushViewController:notesVC animated:YES];
 }
 
 
