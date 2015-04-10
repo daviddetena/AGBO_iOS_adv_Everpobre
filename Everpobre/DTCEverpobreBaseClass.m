@@ -27,7 +27,8 @@
 
 
 -(void)awakeFromFetch{
-    // n-veces a lo largo de la vida del objeto
+    // n-veces a lo largo de la vida del objeto. Viene de un fault o
+    // se recupera de la base de datos
     [super awakeFromFetch];
     
     // KVO (alta en notificaciones de cambio)
@@ -39,8 +40,7 @@
     [super willTurnIntoFault];
     
     // Nos damos de baja en todas las notificaciones
-    [self tearDownKVO];
-    
+    [self tearDownKVO];    
 }
 
 #pragma mark - KVO

@@ -57,6 +57,24 @@
     return cell;
 }
 
+#pragma mark - Table Data delegate
+-(void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    // El usuario quiere eliminar celda
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Eliminamos vista y pedimos al controlador que actualice modelo
+        
+        // Obtenemos libreta actual a partir del FetchedResultsController
+        DTCNotebook *notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+        // Eliminamos celda de la tabla y del modelo.
+        // CoreData manda una notificación de cambio por KVO a FetchedResultsController,
+        // que avisa a la tabla y le dice que se refresque para no mostrar la celda eliminada
+        [self.fetchedResultsController.managedObjectContext deleteObject:notebook];
+    }
+}
 
 
 
