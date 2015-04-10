@@ -30,12 +30,18 @@
     // Asignamos delegados
     self.nameView.delegate = self;
     
+    // Alta en notificaciones de teclado para ver cuando se muestra/oculta el teclado
+    [self setupKeyboardNotifications];
+    
     // Sincronizar modelo -> vista
     [self syncViewWithModel];
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
+    // Baja en las notificaciones de teclado para ver cuando se muestra/oculta el teclado
+    [self tearDownKeyboardNotifications];
     
     // Sincronizo vistas -> modelo
     [self syncViewWithModel];
@@ -96,6 +102,52 @@
 - (void) textFieldDidEndEditing:(UITextField *)textField{
     
     // Buen momento para guardar el texto (pasó la validación)
+}
+
+
+#pragma mark - Notifications
+-(void) setupKeyboardNotifications{
+    // Alta en notificaciones
+    NSNotificationCenter *nc = [NSNotificationCenter
+                                defaultCenter];
+    [nc addObserver:self
+           selector:@selector(notifyThatKeyboardWillAppear:)
+               name:UIKeyboardWillShowNotification
+             object:nil];
+    
+    [nc addObserver:self
+           selector:@selector(notifyThatKeyboardWillDisappear:)
+               name:UIKeyboardWillHideNotification
+             object:nil];
+    
+}
+
+-(void) tearDownKeyboardNotifications{
+    NSNotificationCenter *nc = [NSNotificationCenter
+                                defaultCenter];
+    [nc removeObserver:self];
+}
+
+#pragma mark - Notifications
+
+//UIKeyboardWillShowNotification
+- (void) notifyThatKeyboardWillAppear:(NSNotification *) n{
+    
+    // Sacar el tamaño (bounds) del teclado del objeto userInfo
+    // que viene en la notificación
+    
+    // Calcular los nuevos bounds de self.textView (hacerlo más pequeño)
+    // Hacerlo con animación que coincida con la del teclado
+}
+
+
+//UIKeyboardWillHideNotification
+- (void) notifyThatKeyboardWillDisappear:(NSNotification *) n{
+    
+    // Devolver a self.textView sus bounds originales mediante una
+    // animación que coincida con la del teclado.
+    
+    
 }
 
 @end
