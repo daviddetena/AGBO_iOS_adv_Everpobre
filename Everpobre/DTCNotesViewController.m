@@ -10,6 +10,7 @@
 #import "DTCNote.h"
 #import "DTCPhoto.h"
 #import "DTCNotebook.h"
+#import "DTCNoteViewController.h"
 
 @interface DTCNotesViewController ()
 @property (nonatomic,strong) DTCNotebook *notebook;
@@ -80,7 +81,19 @@
 
 
 #pragma mark - Table Delegate
+// Al hacer tap en celda
+-(void) tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    // Obtenemos nota
+    DTCNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Creamos controlador
+    DTCNoteViewController *noteVC = [[DTCNoteViewController alloc]initWithModel:note];
+    
+    // Hacer push
+    [self.navigationController pushViewController:noteVC animated:YES];
+}
 
 
 #pragma mark - Utils

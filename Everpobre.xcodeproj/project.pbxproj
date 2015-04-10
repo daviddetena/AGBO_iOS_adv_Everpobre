@@ -19,6 +19,8 @@
 		59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4959A1AD6C99C007C62A5 /* DTCNotebook.m */; };
 		59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D4959C1AD6C99C007C62A5 /* DTCPhoto.m */; };
 		59DA9EC61AD82496002A9B90 /* DTCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DA9EC51AD82496002A9B90 /* DTCNotesViewController.m */; };
+		59DA9ECC1AD840B7002A9B90 /* DTCNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */; };
+		59DA9ECD1AD840B7002A9B90 /* DTCNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */; };
 		59FAC82C1AD69ACE00982271 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82B1AD69ACE00982271 /* main.m */; };
 		59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82E1AD69ACE00982271 /* AppDelegate.m */; };
 		59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8301AD69ACE00982271 /* Images.xcassets */; };
@@ -63,6 +65,9 @@
 		59DA9EC41AD82496002A9B90 /* DTCNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNotesViewController.h; sourceTree = "<group>"; };
 		59DA9EC51AD82496002A9B90 /* DTCNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotesViewController.m; sourceTree = "<group>"; };
 		59DA9EC81AD83E8B002A9B90 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		59DA9EC91AD840B7002A9B90 /* DTCNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNoteViewController.h; sourceTree = "<group>"; };
+		59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNoteViewController.m; sourceTree = "<group>"; };
+		59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCNoteViewController.xib; sourceTree = "<group>"; };
 		59FAC8261AD69ACE00982271 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FAC82A1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAC82B1AD69ACE00982271 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +117,9 @@
 				594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */,
 				59DA9EC41AD82496002A9B90 /* DTCNotesViewController.h */,
 				59DA9EC51AD82496002A9B90 /* DTCNotesViewController.m */,
+				59DA9EC91AD840B7002A9B90 /* DTCNoteViewController.h */,
+				59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */,
+				59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FAC8341AD69ACE00982271 /* LaunchScreen.xib in Resources */,
+				59DA9ECD1AD840B7002A9B90 /* DTCNoteViewController.xib in Resources */,
 				59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +318,7 @@
 			files = (
 				594581EF1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m in Sources */,
 				59DA9EC61AD82496002A9B90 /* DTCNotesViewController.m in Sources */,
+				59DA9ECC1AD840B7002A9B90 /* DTCNoteViewController.m in Sources */,
 				59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */,
 				594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */,
 				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
