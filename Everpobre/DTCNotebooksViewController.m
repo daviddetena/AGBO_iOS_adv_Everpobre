@@ -22,6 +22,12 @@
 -(void) viewDidLoad{
     [super viewDidLoad];
     self.title = @"Everpobre";
+    
+    // Add button
+    [self addNewNotebookButton];
+    
+    // Edit button
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table Data Source
@@ -49,6 +55,33 @@
     
     // Devolverla
     return cell;
+}
+
+
+
+
+#pragma mark - Utils
+
+// Añadimos botón de nueva nota
+-(void) addNewNotebookButton{
+    // Botón añadir del sistema en la derecha de la barra de navegación
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                  target:self
+                                  action:@selector(addNewNotebook:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+
+#pragma mark - Actions
+
+// Añadimos nueva libreta en una nueva celda de la tabla
+-(void) addNewNotebook:(id) sender{
+    
+    // Al crear una nueva libreta en el modelo, CoreData manda una notificación de cambio
+    // por KVO a FetchedResultsController, que avisa a la tabla y le dice que se refresque
+    [DTCNotebook notebookWithName:@"Nueva libreta"
+                          context:self.fetchedResultsController.managedObjectContext];
 }
 
 
