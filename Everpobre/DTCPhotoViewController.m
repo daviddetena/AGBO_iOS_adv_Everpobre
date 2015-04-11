@@ -80,12 +80,28 @@
 #pragma mark - UIImagePickerControllerDelegate
 // Acabó la vista modal del UIPicker
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-
+    
+    // ¡OJO! PICO DE MEMORIA ASEGURADO, especialmente en dispositivos antiguos (5 o 4s)
+    // Sacamos UIImage del diccionario
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Guardamos en modelo
+    self.model.image = image;
+    
+    // El presentador (PhotoVC) tiene que ocultar el picker modal que estamos presentando
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 // Se ejecuta cuando se haya ocultado del todo
+                             }];
 }
 
 // El usuario canceló el uso de la cámara/carrete
 -(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-
+    // El presentador (PhotoVC) tiene que ocultar el picker modal que estamos presentando
+    [self dismissViewControllerAnimated:YES
+                               completion:^{
+                                   // Qué hacer al ocultar el picker
+                               }];
 }
 
 @end
