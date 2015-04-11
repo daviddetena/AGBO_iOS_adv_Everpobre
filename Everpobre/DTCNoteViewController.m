@@ -44,7 +44,7 @@
     [self tearDownKeyboardNotifications];
     
     // Sincronizo vistas -> modelo
-    [self syncViewWithModel];
+    [self syncModelWithView];
 }
 
 #pragma mark - Utils
@@ -70,6 +70,29 @@
     self.model.name = self.nameView.text;
     self.model.text = self.textView.text;
 }
+
+-(void) setupKeyboardNotifications{
+    // Alta en notificaciones para cuando se muestra y oculta el teclado
+    NSNotificationCenter *nc = [NSNotificationCenter
+                                defaultCenter];
+    [nc addObserver:self
+           selector:@selector(notifyThatKeyboardWillAppear:)
+               name:UIKeyboardWillShowNotification
+             object:nil];
+    
+    [nc addObserver:self
+           selector:@selector(notifyThatKeyboardWillDisappear:)
+               name:UIKeyboardWillHideNotification
+             object:nil];
+    
+}
+
+-(void) tearDownKeyboardNotifications{
+    NSNotificationCenter *nc = [NSNotificationCenter
+                                defaultCenter];
+    [nc removeObserver:self];
+}
+
 
 
 #pragma mark - Actions
@@ -105,49 +128,45 @@
 }
 
 
-#pragma mark - Notifications
--(void) setupKeyboardNotifications{
-    // Alta en notificaciones
-    NSNotificationCenter *nc = [NSNotificationCenter
-                                defaultCenter];
-    [nc addObserver:self
-           selector:@selector(notifyThatKeyboardWillAppear:)
-               name:UIKeyboardWillShowNotification
-             object:nil];
-    
-    [nc addObserver:self
-           selector:@selector(notifyThatKeyboardWillDisappear:)
-               name:UIKeyboardWillHideNotification
-             object:nil];
-    
-}
-
--(void) tearDownKeyboardNotifications{
-    NSNotificationCenter *nc = [NSNotificationCenter
-                                defaultCenter];
-    [nc removeObserver:self];
-}
 
 #pragma mark - Notifications
 
 //UIKeyboardWillShowNotification
 - (void) notifyThatKeyboardWillAppear:(NSNotification *) n{
+    // Sacar la duración de la animación de teclado
+    double duration = [[n.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     // Sacar el tamaño (bounds) del teclado del objeto userInfo
     // que viene en la notificación
+    NSValue *wrappedFrame = [n.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect kbdFrame = [wrappedFrame CGRectValue];
     
     // Calcular los nuevos bounds de self.textView (hacerlo más pequeño)
     // Hacerlo con animación que coincida con la del teclado
+    CGRect currentFrame = self.textView.frame;
+    CGRect newRect = CGRectMake(currentFrame.origin.x, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height - kbdFrame.size.height + self.bottomBar.frame.size.height);
+    
+    // Durante la animación le asignamos el nuevo frame del textView
+    [UIView animateWithDuration:duration animations:^{
+        self.textView.frame = newRect;
+    }];
+    
 }
 
 
 //UIKeyboardWillHideNotification
 - (void) notifyThatKeyboardWillDisappear:(NSNotification *) n{
     
+    // Sacar la duración de la animación de teclado
+    double duration = [[n.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+
     // Devolver a self.textView sus bounds originales mediante una
     // animación que coincida con la del teclado.
     
-    
+    // Durante la animación le asignamos el nuevo frame del textView
+    [UIView animateWithDuration:duration animations:^{
+        self.textView.frame = CGRectMake(8, 150, 304, 359);
+    }];    
 }
 
 @end

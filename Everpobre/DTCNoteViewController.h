@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *modificationDateView;
 @property (weak, nonatomic) IBOutlet UITextField *nameView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIToolbar *bottomBar;
 
 // Modelo
 @property (nonatomic,strong) DTCNote *model;
