@@ -28,6 +28,10 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    // Me aseguro de que la vista no ocupa toda la pantalla,
+    // sino lo que queda disponible dentro del Navigation
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     // Sincronizo vista con el modelo
     self.photoView.image = self.model.image;
 }
@@ -60,6 +64,9 @@
     }
     cameraPicker.editing = NO;
     cameraPicker.delegate = self;
+    
+    // Configuración de la animación del ViewController
+    cameraPicker.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     // Mostrarlo de forma modal
     [self presentViewController:cameraPicker
