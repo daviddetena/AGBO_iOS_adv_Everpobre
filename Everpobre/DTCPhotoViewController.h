@@ -11,7 +11,7 @@
 @class DTCPhoto;
 
 
-@interface DTCPhotoViewController : UIViewController
+@interface DTCPhotoViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 #pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;

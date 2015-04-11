@@ -45,6 +45,28 @@
 
 - (IBAction)takePicture:(id)sender {
     
+    // Crear UIImagePickerController
+    UIImagePickerController *cameraPicker = [[UIImagePickerController alloc]init];
+    
+    // Configurarla
+    // Comprobamos si se puede seleccionar la camara
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        // Usamos la camara
+        cameraPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else{
+        // Tiro del carrete
+        cameraPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    cameraPicker.editing = NO;
+    cameraPicker.delegate = self;
+    
+    // Mostrarlo de forma modal
+    [self presentViewController:cameraPicker
+                       animated:YES
+                     completion:^{
+                         // Esto se va a ejecutar cuando termine la animación que muestra al picker
+                     }];
 }
 
 - (IBAction)applyFilter:(id)sender {
@@ -54,4 +76,16 @@
 - (IBAction)deletePhoto:(id)sender {
     
 }
+
+#pragma mark - UIImagePickerControllerDelegate
+// Acabó la vista modal del UIPicker
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+
+}
+
+// El usuario canceló el uso de la cámara/carrete
+-(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+
+}
+
 @end

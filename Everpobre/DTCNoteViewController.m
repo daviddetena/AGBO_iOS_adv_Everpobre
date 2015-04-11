@@ -8,6 +8,7 @@
 
 #import "DTCNoteViewController.h"
 #import "DTCNote.h"
+#import "DTCPhotoViewController.h"
 
 @interface DTCNoteViewController ()
 
@@ -98,6 +99,12 @@
 
 #pragma mark - Actions
 - (IBAction) displayPhoto:(id)sender {
+    
+    // Creamos controlador de foto
+    DTCPhotoViewController *photoVC = [[DTCPhotoViewController alloc] initWithModel:self.model.photo];
+    
+    // Hacemos push
+    [self.navigationController pushViewController:photoVC animated:YES];
 
 }
 
