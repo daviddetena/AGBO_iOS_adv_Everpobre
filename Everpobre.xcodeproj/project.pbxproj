@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		590350DE1AD7B0E80069C82C /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 590350DD1AD7B0E80069C82C /* UIViewController+Navigation.m */; };
+		591578631AD9464F00258AD6 /* DTCPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 591578611AD9464F00258AD6 /* DTCPhotoViewController.m */; };
+		591578641AD9464F00258AD6 /* DTCPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591578621AD9464F00258AD6 /* DTCPhotoViewController.xib */; };
 		594581EF1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */; };
 		594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */; };
 		594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */; };
@@ -42,6 +44,9 @@
 /* Begin PBXFileReference section */
 		590350DC1AD7B0E80069C82C /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		590350DD1AD7B0E80069C82C /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		591578601AD9464F00258AD6 /* DTCPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCPhotoViewController.h; sourceTree = "<group>"; };
+		591578611AD9464F00258AD6 /* DTCPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCPhotoViewController.m; sourceTree = "<group>"; };
+		591578621AD9464F00258AD6 /* DTCPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCPhotoViewController.xib; sourceTree = "<group>"; };
 		594581ED1AD6EEA300DBC667 /* DTCEverpobreBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCEverpobreBaseClass.h; sourceTree = "<group>"; };
 		594581EE1AD6EEA300DBC667 /* DTCEverpobreBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCEverpobreBaseClass.m; sourceTree = "<group>"; };
 		594581F11AD724AB00DBC667 /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
@@ -120,6 +125,9 @@
 				59DA9EC91AD840B7002A9B90 /* DTCNoteViewController.h */,
 				59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */,
 				59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */,
+				591578601AD9464F00258AD6 /* DTCPhotoViewController.h */,
+				591578611AD9464F00258AD6 /* DTCPhotoViewController.m */,
+				591578621AD9464F00258AD6 /* DTCPhotoViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 				59FAC8341AD69ACE00982271 /* LaunchScreen.xib in Resources */,
 				59DA9ECD1AD840B7002A9B90 /* DTCNoteViewController.xib in Resources */,
 				59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */,
+				591578641AD9464F00258AD6 /* DTCPhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +329,7 @@
 				59DA9EC61AD82496002A9B90 /* DTCNotesViewController.m in Sources */,
 				59DA9ECC1AD840B7002A9B90 /* DTCNoteViewController.m in Sources */,
 				59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */,
+				591578631AD9464F00258AD6 /* DTCPhotoViewController.m in Sources */,
 				594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */,
 				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
 				590350DE1AD7B0E80069C82C /* UIViewController+Navigation.m in Sources */,

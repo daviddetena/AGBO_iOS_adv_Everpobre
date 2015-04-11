@@ -43,7 +43,8 @@
     // Baja en las notificaciones de teclado para ver cuando se muestra/oculta el teclado
     [self tearDownKeyboardNotifications];
     
-    // Sincronizo vistas -> modelo
+    // Sincronizo vistas -> modelo (la nota se actualiza y ya aparece en la tabla)
+    // El contexto manda la notificación al FetchedResults, que actualiza la tabla
     [self syncModelWithView];
 }
 
@@ -166,7 +167,7 @@
     // Durante la animación le asignamos el nuevo frame del textView
     [UIView animateWithDuration:duration animations:^{
         self.textView.frame = CGRectMake(8, 150, 304, 359);
-    }];    
+    }];
 }
 
 @end
