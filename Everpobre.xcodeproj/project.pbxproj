@@ -14,6 +14,8 @@
 		594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F21AD724AB00DBC667 /* AGTCoreDataTableViewController.m */; };
 		594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */; };
 		5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */; };
+		59D0909F1ADA625000EFAE1E /* _DTCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D0909E1ADA625000EFAE1E /* _DTCLocation.m */; };
+		59D090A21ADA626300EFAE1E /* DTCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D090A11ADA626300EFAE1E /* DTCLocation.m */; };
 		59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495921AD6C99C007C62A5 /* _DTCNote.m */; };
 		59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495941AD6C99C007C62A5 /* _DTCNotebook.m */; };
 		59D4959F1AD6C99C007C62A5 /* _DTCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D495961AD6C99C007C62A5 /* _DTCPhoto.m */; };
@@ -56,6 +58,10 @@
 		5984E5CF1AD6B88700C6BF5A /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
 		5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		59D0909C1ADA5DBE00EFAE1E /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
+		59D0909D1ADA625000EFAE1E /* _DTCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCLocation.h; sourceTree = "<group>"; };
+		59D0909E1ADA625000EFAE1E /* _DTCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCLocation.m; sourceTree = "<group>"; };
+		59D090A01ADA626300EFAE1E /* DTCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCLocation.h; sourceTree = "<group>"; };
+		59D090A11ADA626300EFAE1E /* DTCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCLocation.m; sourceTree = "<group>"; };
 		59D495911AD6C99C007C62A5 /* _DTCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNote.h; sourceTree = "<group>"; };
 		59D495921AD6C99C007C62A5 /* _DTCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCNote.m; sourceTree = "<group>"; };
 		59D495931AD6C99C007C62A5 /* _DTCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNotebook.h; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 		59D495A31AD6C9AB007C62A5 /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				59D0909D1ADA625000EFAE1E /* _DTCLocation.h */,
+				59D0909E1ADA625000EFAE1E /* _DTCLocation.m */,
 				59D495911AD6C99C007C62A5 /* _DTCNote.h */,
 				59D495921AD6C99C007C62A5 /* _DTCNote.m */,
 				59D495931AD6C99C007C62A5 /* _DTCNotebook.h */,
@@ -210,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				59D495A31AD6C9AB007C62A5 /* Machine */,
+				59D090A01ADA626300EFAE1E /* DTCLocation.h */,
+				59D090A11ADA626300EFAE1E /* DTCLocation.m */,
 				59D495971AD6C99C007C62A5 /* DTCNote.h */,
 				59D495981AD6C99C007C62A5 /* DTCNote.m */,
 				59D495991AD6C99C007C62A5 /* DTCNotebook.h */,
@@ -335,6 +345,7 @@
 				594581F31AD724AB00DBC667 /* AGTCoreDataTableViewController.m in Sources */,
 				59D4959E1AD6C99C007C62A5 /* _DTCNotebook.m in Sources */,
 				590350DE1AD7B0E80069C82C /* UIViewController+Navigation.m in Sources */,
+				59D0909F1ADA625000EFAE1E /* _DTCLocation.m in Sources */,
 				59D495A21AD6C99C007C62A5 /* DTCPhoto.m in Sources */,
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
 				59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */,
@@ -342,6 +353,7 @@
 				59D495A01AD6C99C007C62A5 /* DTCNote.m in Sources */,
 				59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */,
 				5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */,
+				59D090A21ADA626300EFAE1E /* DTCLocation.m in Sources */,
 				594581F61AD7260000DBC667 /* DTCNotebooksViewController.m in Sources */,
 				59FAC84B1AD69B0D00982271 /* Model.xcdatamodeld in Sources */,
 			);

@@ -12,10 +12,12 @@ extern const struct DTCNoteAttributes {
 } DTCNoteAttributes;
 
 extern const struct DTCNoteRelationships {
+	__unsafe_unretained NSString *location;
 	__unsafe_unretained NSString *notebook;
 	__unsafe_unretained NSString *photo;
 } DTCNoteRelationships;
 
+@class DTCLocation;
 @class DTCNotebook;
 @class DTCPhoto;
 
@@ -44,6 +46,10 @@ extern const struct DTCNoteRelationships {
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) DTCLocation *location;
+
+//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) DTCNotebook *notebook;
 
 //- (BOOL)validateNotebook:(id*)value_ error:(NSError**)error_;
@@ -67,6 +73,9 @@ extern const struct DTCNoteRelationships {
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;
+
+- (DTCLocation*)primitiveLocation;
+- (void)setPrimitiveLocation:(DTCLocation*)value;
 
 - (DTCNotebook*)primitiveNotebook;
 - (void)setPrimitiveNotebook:(DTCNotebook*)value;

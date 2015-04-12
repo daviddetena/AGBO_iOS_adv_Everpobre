@@ -11,6 +11,7 @@ const struct DTCNoteAttributes DTCNoteAttributes = {
 };
 
 const struct DTCNoteRelationships DTCNoteRelationships = {
+	.location = @"location",
 	.notebook = @"notebook",
 	.photo = @"photo",
 };
@@ -51,6 +52,8 @@ const struct DTCNoteRelationships DTCNoteRelationships = {
 @dynamic name;
 
 @dynamic text;
+
+@dynamic location;
 
 @dynamic notebook;
 
