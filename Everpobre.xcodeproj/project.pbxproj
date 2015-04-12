@@ -55,6 +55,7 @@
 		594581F51AD7260000DBC667 /* DTCNotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotebooksViewController.m; sourceTree = "<group>"; };
 		5984E5CF1AD6B88700C6BF5A /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
 		5984E5D01AD6B88700C6BF5A /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
+		59D0909C1ADA5DBE00EFAE1E /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
 		59D495911AD6C99C007C62A5 /* _DTCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNote.h; sourceTree = "<group>"; };
 		59D495921AD6C99C007C62A5 /* _DTCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DTCNote.m; sourceTree = "<group>"; };
 		59D495931AD6C99C007C62A5 /* _DTCNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DTCNotebook.h; sourceTree = "<group>"; };
@@ -548,9 +549,10 @@
 		59FAC8491AD69B0D00982271 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				59D0909C1ADA5DBE00EFAE1E /* Model2.xcdatamodel */,
 				59FAC84A1AD69B0D00982271 /* Model.xcdatamodel */,
 			);
-			currentVersion = 59FAC84A1AD69B0D00982271 /* Model.xcdatamodel */;
+			currentVersion = 59D0909C1ADA5DBE00EFAE1E /* Model2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
