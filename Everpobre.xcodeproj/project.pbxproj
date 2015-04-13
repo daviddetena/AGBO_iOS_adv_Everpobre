@@ -25,6 +25,8 @@
 		59DA9EC61AD82496002A9B90 /* DTCNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DA9EC51AD82496002A9B90 /* DTCNotesViewController.m */; };
 		59DA9ECC1AD840B7002A9B90 /* DTCNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */; };
 		59DA9ECD1AD840B7002A9B90 /* DTCNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */; };
+		59F782401ADBABF8008B9197 /* DTCNotebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F7823E1ADBABF8008B9197 /* DTCNotebookViewController.m */; };
+		59F782411ADBABF8008B9197 /* DTCNotebookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F7823F1ADBABF8008B9197 /* DTCNotebookViewController.xib */; };
 		59FAC82C1AD69ACE00982271 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82B1AD69ACE00982271 /* main.m */; };
 		59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FAC82E1AD69ACE00982271 /* AppDelegate.m */; };
 		59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAC8301AD69ACE00982271 /* Images.xcassets */; };
@@ -80,6 +82,9 @@
 		59DA9EC91AD840B7002A9B90 /* DTCNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNoteViewController.h; sourceTree = "<group>"; };
 		59DA9ECA1AD840B7002A9B90 /* DTCNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNoteViewController.m; sourceTree = "<group>"; };
 		59DA9ECB1AD840B7002A9B90 /* DTCNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCNoteViewController.xib; sourceTree = "<group>"; };
+		59F7823D1ADBABF8008B9197 /* DTCNotebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCNotebookViewController.h; sourceTree = "<group>"; };
+		59F7823E1ADBABF8008B9197 /* DTCNotebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCNotebookViewController.m; sourceTree = "<group>"; };
+		59F7823F1ADBABF8008B9197 /* DTCNotebookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCNotebookViewController.xib; sourceTree = "<group>"; };
 		59FAC8261AD69ACE00982271 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FAC82A1AD69ACE00982271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAC82B1AD69ACE00982271 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +140,9 @@
 				591578601AD9464F00258AD6 /* DTCPhotoViewController.h */,
 				591578611AD9464F00258AD6 /* DTCPhotoViewController.m */,
 				591578621AD9464F00258AD6 /* DTCPhotoViewController.xib */,
+				59F7823D1ADBABF8008B9197 /* DTCNotebookViewController.h */,
+				59F7823E1ADBABF8008B9197 /* DTCNotebookViewController.m */,
+				59F7823F1ADBABF8008B9197 /* DTCNotebookViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				59DA9ECD1AD840B7002A9B90 /* DTCNoteViewController.xib in Resources */,
 				59FAC8311AD69ACE00982271 /* Images.xcassets in Resources */,
 				591578641AD9464F00258AD6 /* DTCPhotoViewController.xib in Resources */,
+				59F782411ADBABF8008B9197 /* DTCNotebookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +359,7 @@
 				59FAC82F1AD69ACE00982271 /* AppDelegate.m in Sources */,
 				59D4959D1AD6C99C007C62A5 /* _DTCNote.m in Sources */,
 				59FAC82C1AD69ACE00982271 /* main.m in Sources */,
+				59F782401ADBABF8008B9197 /* DTCNotebookViewController.m in Sources */,
 				59D495A01AD6C99C007C62A5 /* DTCNote.m in Sources */,
 				59D495A11AD6C99C007C62A5 /* DTCNotebook.m in Sources */,
 				5984E5D11AD6B88700C6BF5A /* AGTCoreDataStack.m in Sources */,
@@ -425,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -462,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

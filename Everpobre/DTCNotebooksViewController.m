@@ -10,6 +10,7 @@
 #import "DTCNotebook.h"
 #import "DTCNote.h"
 #import "DTCNotesViewController.h"
+#import "DTCNotebookViewController.h"
 
 @interface DTCNotebooksViewController ()
 
@@ -25,11 +26,16 @@
     [super viewDidLoad];
     self.title = @"Everpobre";
     
-    // Add button
+    // Add button to the right
     [self addNewNotebookButton];
     
-    // Edit button
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    // Edit and info buttons to the left
+    self.navigationItem.leftBarButtonItems = @[self.editButtonItem,[self infoButton]];
+    
+    // Creamos un reconocedor de gestos para cargar un modal con la nota y poderle cambiar el nombre
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressed:)];
+    longPress.minimumPressDuration = 0.5;
+    [self.tableView addGestureRecognizer:longPress];
 }
 
 #pragma mark - Table Data Source
@@ -53,7 +59,7 @@
     
     // Configurarla (sincronizar libreta  con celda). Indicamos nombre de libreta y el número de notas
     cell.textLabel.text = notebook.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d notas", [notebook.notes count]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu notas", (unsigned long)[notebook.notes count]];
     
     // Devolverla
     return cell;
@@ -118,6 +124,28 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
 #pragma mark - Utils
+// Añadimos botón de info a la izquierda
+-(UIBarButtonItem *) infoButton{
+    // Botón añadir del sistema en la derecha de la barra de navegación
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                  target:self
+                                  action:@selector(showInfo:)];
+    return infoButton;
+}
+
+// Añadimos nueva libreta en una nueva celda de la tabla
+-(void) showInfo:(id) sender{
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Info"
+                          message:@"Instructions:\n- Single tap to see the notebook's notes.\n- Long press to edit the notebook's name."
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Done",
+                          nil];
+    [alert show];
+}
 
 // Añadimos botón de nueva libreta
 -(void) addNewNotebookButton{
@@ -141,5 +169,32 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
                           context:self.fetchedResultsController.managedObjectContext];
 }
 
+
+#pragma mark - Recognizer
+-(void) longPressed:(UITapGestureRecognizer *) longPress{
+
+    if (longPress.state == UIGestureRecognizerStateRecognized) {
+        // Efectivamente es el gesto del tap
+        
+        CGPoint location = [longPress locationInView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+        
+        if (indexPath) {
+            // Obtenemos libreta seleccionada
+            DTCNotebook *notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            DTCNotebookViewController *notebookVC = [[DTCNotebookViewController alloc]initWithModel:notebook];
+            
+            // Presentamos el controlador de nota de forma modal
+            notebookVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            
+            // Lo mostramos
+            [self presentViewController:notebookVC
+                               animated:YES
+                             completion:^{
+                                 // Esto se va a ejecutar cuando termine la animación que muestra al picker
+                             }];
+        }
+    }    
+}
 
 @end
