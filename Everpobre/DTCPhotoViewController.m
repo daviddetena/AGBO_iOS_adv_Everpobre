@@ -125,33 +125,50 @@
 
 - (IBAction)deletePhoto:(id)sender {
     
-    // AÑADIR ALERTA DE CONFIRMACIÓN (MIRAR MINIGROUP)
+    // Crear AlertController
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"¿Delete photo?"
+                                          message:@"This operation cannot be undone"
+                                          preferredStyle:UIAlertControllerStyleActionSheet];
     
-    // AÑADIR EFECTO DE TRANSICIÓN PARA QUE VAYA DESDE EL CENTRO DE LA IMAGEN AL
-    // ICONO DE LA PAPELERA
-    // Está en IBOutlet y hay que pedir el centro, que estará en el centro de coordenadas
-    // de la toolbar
+    // Actions para el UIAlertController
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        // Eliminamos foto
+        // La eliminamos del modelo
+        self.model.image = nil;
+        CGRect oldRect = self.photoView.bounds;
+        
+        // Actualizamos la vista haciendo una animación
+        [UIView animateWithDuration:0.7
+                         animations:^{
+                             // Difumino, reduzco tamaño y lo hago con transformada fin para que gire
+                             self.photoView.alpha = 0;
+                             self.photoView.bounds = CGRectZero;
+                             self.photoView.transform = CGAffineTransformMakeRotation(M_PI_2);
+                             
+                             // AÑADIR EFECTO DE TRANSICIÓN PARA QUE VAYA DESDE EL CENTRO DE LA IMAGEN AL
+                             // ICONO DE LA PAPELERA
+                             // Está en IBOutlet y hay que pedir el centro, que estará en el centro de coordenadas
+                             // de la toolbar
+                             
+                         } completion:^(BOOL finished) {
+                             // Recuperamos configuración del photoView original
+                             self.photoView.alpha = 1;
+                             self.photoView.bounds = oldRect;
+                             self.photoView.transform = CGAffineTransformIdentity;
+                             
+                             // Sincronizo la vista con el modelo actualizado
+                             self.photoView.image = nil;
+                         }];
+    }];
     
-    // La eliminamos del modelo
-    self.model.image = nil;
-    CGRect oldRect = self.photoView.bounds;
+    // Añadimos acciones al UIAlertController
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
     
-    // Actualizamos la vista haciendo una animación
-    [UIView animateWithDuration:0.7
-                     animations:^{
-                         // Difumino, reduzco tamaño y lo hago con transformada fin para que gire
-                         self.photoView.alpha = 0;
-                         self.photoView.bounds = CGRectZero;
-                         self.photoView.transform = CGAffineTransformMakeRotation(M_PI_2);
-                     } completion:^(BOOL finished) {
-                         // Recuperamos configuración del photoView original
-                         self.photoView.alpha = 1;
-                         self.photoView.bounds = oldRect;
-                         self.photoView.transform = CGAffineTransformIdentity;
-                         
-                         // Sincronizo la vista con el modelo actualizado
-                         self.photoView.image = nil;
-                     }];
+    // Y lo presentamos
+    [self presentViewController:alertController animated:YES completion:nil];
     
 }
 
