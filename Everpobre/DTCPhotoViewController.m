@@ -146,6 +146,30 @@
 
 - (IBAction)deletePhoto:(id)sender {
     
+    
+    
+    /*
+    NSLog(@"Frame toolbar: (%f,%f)",toolbarFrameX,toolbarFrameY);
+    NSLog(@"Bounds toolbar: (%f,%f)",toolbarBoundsX,toolbarBoundsY);
+    
+    //UIView *trashView = (UIView *)[self.toolBar.subviews objectAtIndex:4];
+    for (int i=0; i<[self.toolBar.subviews count]; i++) {
+        UIView *view = (UIView *) [self.toolBar.subviews objectAtIndex:i];
+        CGFloat x = view.frame.origin.x;
+        CGFloat y = view.frame.origin.y;
+        
+        CGFloat xb = view.bounds.origin.x;
+        CGFloat yb = view.bounds.origin.y;
+        
+        CGFloat centerX = view.center.x;
+        CGFloat centerY = view.center.y;
+        
+        NSLog(@"Frame del botón %d: (%f,%f)",i,x,y);
+        NSLog(@"Bounds del botón %d: (%f,%f)",i,xb,yb);
+        NSLog(@"Center del botón %d: (%f,%f)",i,centerX,centerY);
+    }
+*/
+    
     // Crear AlertController
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"¿Delete photo?"
@@ -155,23 +179,33 @@
     // Actions para el UIAlertController
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        // Eliminamos foto
-        // La eliminamos del modelo
-        self.model.image = nil;
-        CGRect oldRect = self.photoView.bounds;
         
-        // Actualizamos la vista haciendo una animación
+        // Calculamos centro del icono de la papelera a partir de la toolbar
+        CGFloat toolbarFrameX = self.toolBar.frame.origin.x;
+        CGFloat toolbarFrameY = self.toolBar.frame.origin.y;
+        UIView *trashView = (UIView *) [self.toolBar.subviews objectAtIndex:4];
+        CGFloat centerX = trashView.center.x;
+        CGFloat centerY = trashView.center.y;
+        CGPoint trashCenter = CGPointMake(toolbarFrameX + centerX, toolbarFrameY + centerY);
+        
+        // Eliminamos foto del modelo
+        self.model.image = nil;
+        
+        // Guardamos estado inicial del modelo
+        CGRect oldRect = self.photoView.bounds;
+        CGPoint oldCenter = self.photoView.center;
+        
         [UIView animateWithDuration:0.7
+                              delay:0
+                            options:0
                          animations:^{
-                             // Difumino, reduzco tamaño y lo hago con transformada fin para que gire
+                             // Difumino, reduzco tamaño y lo hago con transformada afin de rotación para que gire
                              self.photoView.alpha = 0;
                              self.photoView.bounds = CGRectZero;
                              self.photoView.transform = CGAffineTransformMakeRotation(M_PI_2);
                              
-                             // AÑADIR EFECTO DE TRANSICIÓN PARA QUE VAYA DESDE EL CENTRO DE LA IMAGEN AL
-                             // ICONO DE LA PAPELERA
-                             // Está en IBOutlet y hay que pedir el centro, que estará en el centro de coordenadas
-                             // de la toolbar
+                             // Trasladamos la imagen al centro del icono de la papelera
+                             self.photoView.center = trashCenter;
                              
                          } completion:^(BOOL finished) {
                              // Recuperamos configuración del photoView original
@@ -181,9 +215,13 @@
                              
                              // Sincronizo la vista con el modelo actualizado
                              self.photoView.image = nil;
+                             
+                             // Centro original
+                             self.photoView.center = oldCenter;
                          }];
+        
     }];
-    
+
     // Añadimos acciones al UIAlertController
     [alertController addAction:cancelAction];
     [alertController addAction:deleteAction];

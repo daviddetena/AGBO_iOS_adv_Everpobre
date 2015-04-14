@@ -16,6 +16,8 @@
 #pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+
 
 @property (strong,nonatomic) DTCPhoto *model;
 

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="activityView" destination="U8l-LQ-Ek0" id="vHT-4r-viK"/>
                 <outlet property="photoView" destination="NdW-Z2-hrf" id="gSY-Dz-575"/>
+                <outlet property="toolBar" destination="nLA-L2-gbf" id="tu9-ZE-S2w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,14 +26,14 @@
                                 <action selector="takePicture:" destination="-1" id="jyI-0z-d5s"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ygt-Ia-Ga0"/>
-                        <barButtonItem title="Vintage" id="PG5-Vq-oxI">
+                        <barButtonItem tag="1" style="plain" systemItem="flexibleSpace" id="ygt-Ia-Ga0"/>
+                        <barButtonItem tag="2" title="Vintage" id="PG5-Vq-oxI">
                             <connections>
                                 <action selector="applyFilter:" destination="-1" id="0fm-Ls-nvy"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="M4e-y6-A1q"/>
-                        <barButtonItem systemItem="trash" id="Nnf-BD-jgC">
+                        <barButtonItem tag="3" style="plain" systemItem="flexibleSpace" id="M4e-y6-A1q"/>
+                        <barButtonItem tag="4" systemItem="trash" id="Nnf-BD-jgC">
                             <connections>
                                 <action selector="deletePhoto:" destination="-1" id="g5Y-UQ-2iU"/>
                             </connections>
