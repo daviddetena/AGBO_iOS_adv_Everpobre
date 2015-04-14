@@ -35,6 +35,9 @@
     
     // Sincronizo vista con el modelo
     self.photoView.image = self.model.image;
+    
+    // Activity View oculto al mostrarse la vista
+    [self disableActivityIndicator];
 }
 
 
@@ -45,6 +48,24 @@
     // de Core Data) con las notificaciones KVO
     self.model.image = self.photoView.image;
 }
+
+
+#pragma mark - Utils
+-(void) enableActivityIndicator{
+    self.activityView.hidden = NO;
+    if (![self.activityView isAnimating]) {
+        [self.activityView startAnimating];
+    }
+}
+
+
+-(void) disableActivityIndicator{
+    self.activityView.hidden = YES;
+    if ([self.activityView isAnimating]) {
+        [self.activityView stopAnimating];
+    }
+}
+
 
 #pragma mark - Actions
 
@@ -79,48 +100,48 @@
 
 - (IBAction)applyFilter:(id)sender {
     
-    // TAREA: PONER ACTIVITY INDICATOR MIENTRAS SE APLICA EL FILTRO
-    // HACER EL FILTRO EN SEGUNDO PLANO
-    // AL ACABAR, EJECUTAR LA ACTUALIZACIÓN DE LA IMAGEN EN PRIMER
-    // PLANO Y OCULTAR ACTIVITY INDICATOR
+    // Ponemos activity indicator mientras se aplica el filtro
+    [self enableActivityIndicator];
     
-//    // Request a reusable queue and download image in background
-//    dispatch_queue_t download = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    dispatch_async(download, ^{
-//        NSURL *url = [NSURL URLWithString:@"http://media.vandal.net/master/14199/20121210152529_3.jpg"];
-//        NSData *imgData = [NSData dataWithContentsOfURL:url];
-//        
-//        // Completion blocks will be executed in main queue
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            // Run completion block in main queue
-//            UIImage *image = [UIImage imageWithData:imgData];
-//            completionBlock(image);
-//        });
-//    });
-    
-    // Crear un contexto de CoreImage
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    // Imagen de entrada para el filtro, en formato CoreImage: CIImage (necesito una CoreGraphics Image)
-    CIImage *inputImg = [CIImage imageWithCGImage:[self.model.image CGImage]];
-    
-    // Crear filtro y configurarlo mediante KVC
-    CIFilter *vintage = [CIFilter filterWithName:@"CIFalseColor"];
-    [vintage setValue:inputImg forKey:@"inputImage"];
-    
-    // Imagen de salida
-    CIImage *outputImg = vintage.outputImage;
-    
-    // Aplicar filtro (necesitamos CGImageRef)
-    CGImageRef out = [context createCGImage:outputImg fromRect:outputImg.extent];
-    
-    // Sustituyo la imagen
-    self.model.image = [UIImage imageWithCGImage:out];
-    CGImageRelease(out);
-    
-    // Actualizo UI
-    self.photoView.image = self.model.image;
-    
+    // Aplicamos filtro en segundo plano, accediendo a una cola existente de fábrica
+    // sin necesidad de crear una propia (usamos una iniciada por usuario)
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        
+        // Crear un contexto de CoreImage
+        CIContext *context = [CIContext contextWithOptions:nil];
+        
+        // Imagen de entrada para el filtro, en formato CoreImage: CIImage (necesito una CoreGraphics Image)
+        CIImage *inputImg = [CIImage imageWithCGImage:[self.model.image CGImage]];
+        
+        // Crear filtro y configurarlo mediante KVC
+        CIFilter *vintage = [CIFilter filterWithName:@"CIFalseColor"];
+        [vintage setValue:inputImg forKey:@"inputImage"];
+        
+        // Imagen de salida
+        CIImage *outputImg = vintage.outputImage;
+        
+        // Aplicar filtro (necesitamos CGImageRef)
+        CGImageRef out = [context createCGImage:outputImg fromRect:outputImg.extent];
+        
+        // Sustituyo la imagen
+        self.model.image = [UIImage imageWithCGImage:out];
+        CGImageRelease(out);
+        
+        NSLog(@"Filtro aplicado en segundo plano");
+        
+        // Actualizamos UI en cola principal
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // Actualizo UI
+            self.photoView.image = self.model.image;
+            
+            NSLog(@"UI actualizada en cola principal");
+            
+            // Ocultamos activity Indicator
+            [self disableActivityIndicator];
+
+        });
+    });
 }
 
 - (IBAction)deletePhoto:(id)sender {

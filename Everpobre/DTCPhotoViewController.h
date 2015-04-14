@@ -15,6 +15,8 @@
 
 #pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+
 @property (strong,nonatomic) DTCPhoto *model;
 
 #pragma mark - Init
